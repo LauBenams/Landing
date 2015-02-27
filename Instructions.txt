@@ -1,0 +1,53 @@
+
+
+*** Hello! Here's how to install your mailing list subscription form ***
+
+
+1: Open the file NLprocess.php with a Text Editor (i.e. Notepad.exe) 
+
+2: Follow the inside instructions. (substitute the test email with your real newsletter email 
+It's the same used in SENDBLASTER Manage Subscription section).
+
+3: Open the file newsletter.htm and copy the FORM lines to your personal webpage.
+
+4: Upload to your website the files:
+
+	* NLprocess.php
+	* NL-style.css
+	* your modified html page.
+
+5: that's it!
+
+
+
+
+
+
+
+*** How To Manage more subscription lists ***
+
+1 - Duplicate the entire "newsletterphp" directory
+2 - Rename the "NLprocess.php" file in "NLprocess_B.php" and modify it with the email address for the second list.
+3 - In the file "newsletter.htm" modify the link to "NLprocess_B.php" (instead of "NLprocess.php") .
+
+4 - Cut and Paste the HTML code from the new "newsletter.htm" to your website files.
+5 - Upload in your website the files:
+
+	* NLprocess_B.php
+	* NL-style.css
+	* your modified webpage.htm
+	
+6- Make sure you have a different email address for each list present in the the SendBlaster Manage Subscription section.
+
+
+
+
+Thank you for using SendBlaster.
+The SendBlaster Team
+
+
+http://www.sendblaster.com
+And if you need help: support@sendblaster.com
+
+
+
