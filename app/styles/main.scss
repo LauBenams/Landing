@@ -1,0 +1,184 @@
+$icon-font-path: "../bower_components/sass-bootstrap/fonts/";
+$fa-font-path: "../bower_components/font-awesome/fonts";
+
+$pinpo-green: #3F6;
+$dark-grey: #333;
+$text-color: #666;
+
+$btn-default-color: $dark-grey;
+$brand-primary: $pinpo-green;
+$btn-success-bg: $pinpo-green;
+$btn-success-color: $dark-grey;
+$input-border-focus: $pinpo-green;
+
+@import 'sass-bootstrap/lib/variables';
+
+$font-family-sans-serif: "Lato", arial,helvetica;
+$headings-color: $pinpo-green;
+
+$hr-border: $pinpo-green;
+
+$navbar-height: 70px;
+$navbar-inverse-bg: #1D2123;
+$navbar-inverse-border: $navbar-inverse-bg;
+$navbar-inverse-color: $gray;
+$navbar-inverse-link-color: $navbar-inverse-color;
+$navbar-inverse-link-hover-color: $pinpo-green;
+$navbar-inverse-link-active-color: $pinpo-green;
+$navbar-inverse-link-active-bg: #1D2123;
+
+@import 'sass-bootstrap/lib/bootstrap';
+@import 'font-awesome/scss/font-awesome';
+@import 'fullpage.js/jquery.fullPage';
+
+.glyphicon.glyphicon-xl { font-size: 3em; }
+.glyphicon-apple { &:before { content: "\f8ff"; } }
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* Custom CSS
+ * --------------------------------------- */
+
+// h1{
+//     font-size: 2em;
+//     color: $pinpo-green;
+//     // rgb(64, 255, 111);
+// }
+
+/* Bootstrap overrides
+ * --------------------------------------- */
+.navbar-inverse {
+    font-size: 20px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+@media (min-width: 768px){
+    .navbar-nav{
+        float:none;
+        margin: 0 auto;
+        display: table;
+        table-layout: fixed;
+    }
+}
+
+.navbar-nav {
+  > li > a {
+    padding-left:   30px;
+    padding-right:  30px;
+  }
+}
+
+.fp-controlArrow{
+    &.fp-prev {
+        border-color: transparent #271313 transparent transparent;
+    }
+    &.fp-next {
+        border-color: transparent transparent transparent #271313;
+    }
+}
+
+.section {
+    text-align:center;
+    border-bottom:thin solid rgb(64, 255, 111);
+    border-top:medium solid rgb(64, 255, 111);
+    &.section-default {
+        background-color:#FFFFFF;
+    }
+    &.section-inverse {
+        background-color: #23262C;
+        color: $pinpo-green;
+    }
+}
+
+header.section, footer.section {
+    @extend .section.section-inverse;
+}
+
+.navbar-brand {
+    position: absolute;
+    left: 70px;
+    padding: 12px;
+}
+
+h1#PINPO {
+
+    font-size: 120px;
+    text-align: center;
+
+    small {
+        display: block;
+        color: #FFF;
+        font-size: 28px;
+        font-weight:300;
+        line-height: 1.2;
+        text-align: center;
+        z-index: 56;
+    }
+}
+
+h2.titreslide {
+   border-bottom:dotted;
+   margin-bottom: 40px;
+}
+
+.feature {
+    font-weight: 300;
+    padding: 90px;
+
+    &.feature-img img {
+        margin: 20px;
+    }
+
+    &.feature-description {
+
+        margin-top: 50px;
+
+        img {
+            cursor: pointer;
+        }
+    }
+}
+
+img.step {
+    padding: 20px;
+    border: 2px solid rgb(64, 255, 111);
+}
+
+.blocglobal {
+  white-space:nowrap;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -33px;
+
+  img {
+    display: block;
+    margin: auto;
+  }
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: 50px;
+}
+
+.coming-soon {
+    img {
+        margin-right: 30px;
+    }
+}
+
+form#signup {
+    margin: 30px;
+}
+
+input.form-control.form-control-inverse {
+    background-color: #1D2123;
+    color: white;
+}
