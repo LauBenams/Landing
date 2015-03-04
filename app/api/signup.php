@@ -1,7 +1,5 @@
 <?php
 
-namespace Api;
-
 use \Exception;
 
 require_once(dirname(__FILE__).'/config.inc.php');
@@ -79,7 +77,7 @@ try {
 
         // Create connection
         $conn = new mysqli(_DB_SERVER_, _DB_USER_, _DB_PASSWD_, _DB_NAME_);
-        $signup_table = "signup"
+        $signup_table = "signup";
 
         // Check connection
         if ($conn->connect_error) {
@@ -89,25 +87,38 @@ try {
             );
         }
 
-        $sql = "INSERT INTO " . $signup_table . " (email)
-                VALUES ('" . $email . "')";
-        $success = $conn->query($sql);
+        $sql = "SELECT * FROM " . $signup_table . " WHERE email='" . $email . "';";
+        $result = $conn->query($sql);
 
-        if ($success === TRUE) {
-            $conn->close();
+        if ($result->num_rows == 0) {
+            $sql = "INSERT INTO " . $signup_table . " (email)
+                    VALUES ('" . $email . "')";
+            $success = $conn->query($sql);
 
-            $response = array(
-              'success' => true,
-              'message' => "You have been successfully registered.",
-            );
+            if ($success === TRUE) {
+                $conn->close();
+
+                $response = array(
+                  'success' => true,
+                  'message' => "You have been successfully registered.",
+                );
+            }
+            else {
+                $error_msg = $conn->error;
+                $conn->close();
+
+                throw new Exception(
+                    "Connection failed: " . $error_msg,
+                    500
+                );
+            }
         }
         else {
-            $error_msg = $conn->error;
             $conn->close();
 
             throw new Exception(
-                "Connection failed: " . $error_msg,
-                500
+                "Email " . $email . " is already registered.",
+                400
             );
         }
     }

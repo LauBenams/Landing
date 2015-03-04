@@ -6,8 +6,8 @@
     "modernizr": "~2.6.2",
     "jquery": "~1.10.2",
     "jquery.countdown": "~2.0.4",
-    "validationEngine": "~2.6.4",
-    "font-awesome": "~4.3.0"
+    "font-awesome": "~4.3.0",
+    "jquery-validation": "~1.13.1"
   },
   "devDependencies": {
     "fullpage.js": "~2.5.9"
