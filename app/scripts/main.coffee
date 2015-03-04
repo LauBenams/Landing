@@ -1,10 +1,9 @@
-console.log "'Allo from CoffeeScript!"
-
 $(document).ready () ->
     $('#fullpage').fullpage {
         # sectionsColor: ['#23262C', '#FFFFFF', '#FFFFFF', '#23262C', 'whitesmoke', '#ccddff'],
         anchors: ['home', 'about', 'team', 'contact'],
         menu: '#nav-menu',
+        controlArrows: false,
         scrollingSpeed: 1000
     }
 
@@ -33,7 +32,7 @@ $(document).ready () ->
         return # don't return a value
 
     # Send signup form asynchronously
-    $('form#signup').submit (event) ->
+    $('form').submit (event) ->
         form = $(this)
         $.ajax({
             type: form.attr('method'),
@@ -41,16 +40,19 @@ $(document).ready () ->
             data: form.serialize()
         })
         .success (data, textStatus, jqXHR ) ->
-            $(".modal .modal-body").html(data.message)
-            $(".modal").modal('show')
+            $("#message_popup .content").html(if data.message then data.message else "Unknown error")
+            $("#message_popup").modal('show')
+            $("#message_popup .modal-title").html(if data.success then "Success" else "Error");
 
             # If the mail has been sent, hide the form
-            $("form#signup").hide() if (data.success)
+            # if (data.success)
+                # $("form#signup").hide()
+            # else
 
         .error (jqXHR, textStatus, errorThrown ) ->
             data = JSON.parse(jqXHR.responseText);
-            $(".modal .modal-body").html(data.statusText + "<br>" + data.description)
-            $(".modal").modal('show')
+            $("#message_popup .modal-body").html(data.statusText + "<br>" + data.description)
+            $("#message_popup").modal('show')
             # Optionally alert the user of an error here...
 
         event.preventDefault(); # Prevent the form from submitting via the browser.

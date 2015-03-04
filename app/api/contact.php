@@ -4,12 +4,14 @@ namespace Api;
 
 use \Exception;
 
+require_once(dirname(__FILE__).'/config.inc.php');
+
 try {
     // Prevent displaying errors
     ob_start();
 
     $response = array();
-    $allowedMethods = array('GET');
+    $allowedMethods = array('POST');
     $allowedHeaders = array();
 
     $resources = array(
@@ -67,46 +69,36 @@ try {
         );
     }
 
-    // Reject if not acceptable
-    if (!array_key_exists('Accept', $headers) || !in_array('application/json', explode(', ', $headers['Accept']))) {
-        throw new Exception('Only application/json is acceptable');
-    }
-
     /**
      * -------------------------------------------------------------------------
-     * /resource/{id}
+     * Check that "email" exists
      * -------------------------------------------------------------------------
      */
-    if (isset($_GET['id'])) {
-        if (!preg_match('/^[a-z0-9-]+$/', $id = $_GET['id'])) {
-            throw new Exception('Resource id must contain only alphanumeric and - characters', 400);
-        }
-        if (!array_key_exists($id, $resources)) {
-            throw new Exception("Resource with id $id does not exist", 404);
-        }
-        $response = array_merge(
-            $response,
-            array('id' => $id),
-            $resources[$id]
+    if (isset($_POST['email']) && isset($_POST['message'])) {
+        $to = "contact@pinpo.fr";
+        $subject = $_POST['subject'];
+        $email_field = $_POST['email'];
+        $body = $_POST['message'];
+
+        $success = mail($to, $subject, $body);
+
+        ini_set("SMTP", _SMTP_SERVER_);
+
+        $response = array(
+          'success' => $success,
+          'message' => $success ? "Your email has been sent successfully." : error_get_last(),
         );
     }
     /**
      * -------------------------------------------------------------------------
-     * /resource
+     * No email specified
      * -------------------------------------------------------------------------
      */
     else {
-        $url = 'http' . (array_key_exists('HTTPS', $_SERVER) && $_SERVER['HTTPS'] === 'on' ? 's' : '') . '://'
-            . $headers['Host'] . $_SERVER['REQUEST_URI'];
-
-        $response['resources'] = array();
-        foreach ($resources as $id => $resource) {
-            array_push($response['resources'], array(
-                'id' => $id,
-                'name' => $resource['name'],
-                'href' => preg_match('/\.php$/', $url) ? "$url?id=$id" : "$url/$id",
-            ));
-        }
+        throw new Exception(
+            'Email is missing',
+            400
+        );
     }
 
     // Catch non-exception errors

@@ -4,6 +4,8 @@ namespace Api;
 
 use \Exception;
 
+require_once(dirname(__FILE__).'/config.inc.php');
+
 try {
     // Prevent displaying errors
     ob_start();
@@ -73,17 +75,41 @@ try {
      * -------------------------------------------------------------------------
      */
     if (isset($_POST['email'])) {
-        $to = "contact@pinpo.fr";
-        $subject = "Add this address to your mailing list";
-        $email_field = $_POST['email'];
-        $body = "E-Mail\n$email_field";
+        $email = $_POST['email'];
 
-        $success = mail($to, $subject, $body);
+        // Create connection
+        $conn = new mysqli(_DB_SERVER_, _DB_USER_, _DB_PASSWD_, _DB_NAME_);
+        $signup_table = "signup"
 
-        $response = array(
-          'success' => $success,
-          'message' => $success ? "Your email has been sent successfully." : "An error occured while sending your email<br> Please try again later",
-        );
+        // Check connection
+        if ($conn->connect_error) {
+            throw new Exception(
+                "Connection failed: " . $conn->connect_error,
+                500
+            );
+        }
+
+        $sql = "INSERT INTO " . $signup_table . " (email)
+                VALUES ('" . $email . "')";
+        $success = $conn->query($sql);
+
+        if ($success === TRUE) {
+            $conn->close();
+
+            $response = array(
+              'success' => true,
+              'message' => "You have been successfully registered.",
+            );
+        }
+        else {
+            $error_msg = $conn->error;
+            $conn->close();
+
+            throw new Exception(
+                "Connection failed: " . $error_msg,
+                500
+            );
+        }
     }
     /**
      * -------------------------------------------------------------------------
