@@ -6,7 +6,7 @@ $(document).ready () ->
         scrollingSpeed: 1000
     }
 
-    $('#counter').countdown "2015/06/01", (event) ->
+    $('#counter').countdown "2015/04/20", (event) ->
         $(this).text event.strftime('%D Days, %H Hours, %M Minutes, %S Seconds')
 
     # Activate 'next button' on about section
