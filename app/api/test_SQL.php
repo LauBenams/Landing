@@ -38,7 +38,7 @@ function getmicrotime()
 // ******  Configuration - Fin ******
 
 
-      $Table_SQL = "Tab_test_DB";
+      $Table_SQL = "signup";
 
       $fh_db = mysql_connect($DBhost, $DBowner, $DBpw);
       $Erreur = mysql_error();

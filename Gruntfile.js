@@ -421,6 +421,19 @@ module.exports = function (grunt) {
                 'htmlmin'
             ]
         }
+
+        // 'ftp-deploy': {
+        //   build: {
+        //     auth: {
+        //       host: 'ftp.cluster011.ovh.net',
+        //       port: 21,
+        //       authKey: 'key1'
+        //     },
+        //     src: 'path/to/source/folder',
+        //     dest: '/path/to/destination/folder',
+        //     exclusions: ['path/to/source/folder/**/.DS_Store', 'path/to/source/folder/**/Thumbs.db', 'path/to/dist/tmp']
+        //   }
+        // }
     });
 
 
