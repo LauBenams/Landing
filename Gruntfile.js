@@ -420,19 +420,23 @@ module.exports = function (grunt) {
                 'svgmin',
                 'htmlmin'
             ]
-        }
+        },
 
         // 'ftp-deploy': {
-        //   build: {
-        //     auth: {
-        //       host: 'ftp.cluster011.ovh.net',
-        //       port: 21,
-        //       authKey: 'key1'
-        //     },
-        //     src: 'path/to/source/folder',
-        //     dest: '/path/to/destination/folder',
-        //     exclusions: ['path/to/source/folder/**/.DS_Store', 'path/to/source/folder/**/Thumbs.db', 'path/to/dist/tmp']
-        //   }
+        //     build: {
+        //         auth: {
+        //             host: 'ftp.cluster011.ovh.net',
+        //             port: 21,
+        //             authKey: 'key'
+        //         },
+        //         src: 'dist',
+        //         dest: 'test_deploy',
+        //         forceVerbose: true,
+        //         // exclusions: [
+        //         //     '**/.DS_Store',
+        //         //     '**/Thumbs.db'
+        //         // ]
+        //     }
         // }
     });
 
@@ -441,9 +445,9 @@ module.exports = function (grunt) {
         if (target === 'dist') {
             return grunt.task.run([
                 'build',
-                 'configureProxies',
-                 'php:dist',
-                 'connect:dist:keepalive'
+                'configureProxies',
+                'php:dist',
+                'connect:dist:keepalive'
             ]);
         }
 
@@ -497,4 +501,10 @@ module.exports = function (grunt) {
         'test',
         'build'
     ]);
+
+    grunt.registerTask('deploy', [
+        'build',
+        'ftp-deploy'
+    ]);
+
 };
