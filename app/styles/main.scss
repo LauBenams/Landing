@@ -102,6 +102,15 @@ $navbar-inverse-link-active-bg: #1D2123;
     }
 }
 
+
+@media (min-width: $screen-sm-min) {
+    .center {
+        display:table-cell;
+        vertical-align:middle;
+        float:none;
+    }
+}
+
 h1#PINPO {
 
     font-size: 120px;
@@ -140,14 +149,12 @@ h2.titreslide {
 
 .feature {
     font-weight: 300;
-    padding: 90px;
 
     &.feature-img {
         img { margin: 20px; }
     }
 
     &.feature-description {
-        margin-top: 50px;
         p { margin-bottom: 30px; }
         img { cursor: pointer; }
     }
