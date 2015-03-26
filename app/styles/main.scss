@@ -67,10 +67,12 @@ $navbar-inverse-link-active-bg: #1D2123;
         }
     }
 
-    .navbar-brand {
-        position: absolute;
-        left: 70px;
-        padding: 12px;
+    @media (min-width: $screen-sm-min) {
+        .navbar-brand {
+            position: absolute;
+            left: 70px;
+            padding: 12px;
+        }
     }
 
     .navbar-contact {
@@ -93,6 +95,7 @@ $navbar-inverse-link-active-bg: #1D2123;
     text-align:center;
     border-bottom:thin solid rgb(64, 255, 111);
     border-top:medium solid rgb(64, 255, 111);
+
     &.section-default {
         background-color:#FFFFFF;
     }
@@ -105,7 +108,7 @@ $navbar-inverse-link-active-bg: #1D2123;
 
 @media (min-width: $screen-sm-min) {
     .center {
-        display:table-cell;
+        display:table-cell !important;
         vertical-align:middle;
         float:none;
     }
@@ -151,7 +154,13 @@ h2.titreslide {
     font-weight: 300;
 
     &.feature-img {
-        img { margin: 20px; }
+        // img { margin: 20px; }
+        @media (max-width: $screen-xs-max) {
+            img {
+                margin: auto;
+                max-height: 200px;
+            }
+        }
     }
 
     &.feature-description {

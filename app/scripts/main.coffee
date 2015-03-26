@@ -1,4 +1,7 @@
 $(document).ready () ->
+
+    $(".navbar-nav li a").click (event) -> $(".navbar-collapse").collapse('hide')
+
     $('#fullpage').fullpage {
         anchors: ['home', 'about', 'team', 'contact'],
         menu: '#nav-menu',
