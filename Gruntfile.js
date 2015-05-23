@@ -369,6 +369,7 @@ module.exports = function (grunt) {
                     dest: '<%= yeoman.dist %>',
                     src: [
                         'api/{,*/}*.*',
+                        'blog/{,*/}*.*',
                         '*.{ico,png,txt}',
                         '.htaccess',
                         'images/{,*/}*.webp',
@@ -491,9 +492,9 @@ module.exports = function (grunt) {
         'cssmin',
         'uglify',
         'copy:dist',
-        'modernizr',
         'rev',
-        'usemin'
+        'usemin',
+        'modernizr',
     ]);
 
     grunt.registerTask('default', [
