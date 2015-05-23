@@ -21,8 +21,9 @@
 
         <script src="bower_components/modernizr/modernizr.js"></script>
         
-        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55603e764072f421" async="async"></script>
+
 
 
     </head>
@@ -49,7 +50,7 @@
                     <ul id="nav-menu" class="nav navbar-nav">
                         <li data-menuanchor="home"><a href="#home">Accueil</a></li>
                         <li data-menuanchor="about"><a href="#about">À propos</a></li>
-                        <li data-menuanchor="team"><a href="#team">Équipe</a></li>
+                        <li data-menuanchor="team"><a href="#team">La solution</a></li>
                         <li data-menuanchor="contact"><a href="#contact">Contact</a></li>
                         <li><a href="http://pinpo.fr/Blog/">Blog</a></li>
                     </ul>
@@ -70,8 +71,16 @@
                     <small>La Première Solution de Matching entre Propriétaires et Locataires</small>
                 </h1><br>
                 <h5 style="color:#FFF; font-weight:100">LOCATION, SOUS-LOCATION, COLOCATION</h5>
+                <form class="form-inline" id="signup" method="POST" action="api/signup.php">
+                                <div class="form-group">
+                                    <input type="text" name="email" id="signup_email" class="form-control form-control-inverse validate[required,custom[email]] text-input input-text m-wrap m-ctrl" placeholder="Votre adresse mail" required/>
+                                </div>
+                                <input type="hidden" name="ajax" value="1" />
+                                <button type="submit" name="submit" class="btn btn-success"><span>GO !</span></button>
+                            </form>
 
                 <div class="blocglobal">
+                
                     <img src="images/hori.png" alt="hori">
                     <img src="images/droite.png" alt="droite">
                 </div>
@@ -85,14 +94,17 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 center">
                                 <div class="feature feature-img text-center">
-                                    <img class="step img-circle img-responsive" src="images/S4.png" alt="step1"/>
+                                    <img class="step img-responsive" src="images/feature_mockup_1.png" alt="step1"/>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 center">
                                 <div class="feature feature-description text-left">
-                                    <h2 class="titreslide"><span>Étape 1: Une Inscription Simple et Rapide !</span></h2>
-                                    <p>Complétez votre profil et prenez en photo les pièces de votre dossier en toute simplicité. Rendez visible votre unique dossier PINPO contenant certification et recommandations: diffusez-le, exportez-le partout où vous le souhaitez!</p>
-                                    <a href="javascript:void(0)" onclick="$.fn.fullpage.moveSlideRight();"><img src="images/next.png" alt="boutton nextnext" /></a>
+                                    <h2 class="titreslide"><span>Locataire, enfin quelqu'un qui vous comprend !</span></h2>
+                                    <h3>Finie la queue dans les escaliers</h3>
+					  <p>Avec PINPO, ce n'est pas juste votre dossier financier qui compte, mais surtout qui vous êtes. Chez nous, c'est l’humain avant tout ! Pas de perte de temps, de visites inutiles, plus d'annonces incomplètes. Une visite signifie une réelle chance de louer le bien que vous aurez choisi.</p>
+                       <h4>Propriétaires ---></h4>
+                                    
+                                  <a href="javascript:void(0)" onclick="$.fn.fullpage.moveSlideRight();"><img src="images/next.png" alt="boutton nextnext" /></a>
                                 </div>
                             </div>
                         </div>
@@ -104,90 +116,55 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 center">
                                 <div class="feature feature-img text-center">
-                                    <img class="step img-circle img-responsive" src="images/STEP-1.png" alt="step2"/>
+                                    <img class="step img-responsive" src="images/feature_mockup_2.png" alt="step2"/>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 center">
                                 <div class="feature feature-description text-left">
-                                    <h2 class="titreslide"><span>Étape 2: Une promenade dans vos quartiers favoris</span></h2>
-                                    <p>Vous cherchez un bien? Fixez votre périmètre de recherche ou visez un quartier précis. Sélectionnez vos critères, puis recevez des suggestions de logements autour de vous! <br>
-                                    Vous proposez un bien? Sélectionnez les critères que votre futur locataire doit remplir, et visualisez les profils correspondant à vos attentes!</p>
+                                    <h2 class="titreslide"><span>Propriétaire, voilà la location en toute sérénité !</span></h2>
+                                   <h3>Les mauvaises surprises... plus jamais</h3>
+					  <p>Nous proposons une plateforme avec des profils de locataires de qualité. Finies les heures passées à recevoir des dizaines d'appels. Fini le choix de son locataire à l'aveugle, uniquement basé sur sa solvabilité . À vous de choisir réellement qui convient à votre bien.</p>
+                      <h4><--- Locataires</h4>
                                     <a href="javascript:void(0)" onclick="$.fn.fullpage.moveSlideRight();"><img src="images/next.png" alt="boutton next" /></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div><!-- end .slide -->
-
-                <div class="slide">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 center">
-                                <div class="feature feature-img text-center">
-                                    <img class="step img-circle img-responsive" src="images/STEP-2.png" alt="step3"/>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 center">
-                                <div class="feature feature-description text-left">
-                                    <h2 class="titreslide">Étape 3: Match & Tchat</h2>
-                                    <p>Propriétaires et locataires, vous matchez! Alors discutez et convenez d'un rendez-vous instantanément!</p>
-                                    <a href="javascript:void(0)" onclick="$.fn.fullpage.moveSlideRight();"><img src="images/next.png" alt="boutton next" /></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- end .slide -->
-
-                <div class="slide">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 center">
-                                <div class="feature feature-img text-center">
-                                    <img class="step img-circle img-responsive" src="images/S3.png" alt="step4"/>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 center">
-                                <div class="feature feature-description text-left">
-                                    <h2 class="titreslide">Étape 4: Il est temps de profiter !</h2>
-                                    <p>Rendez-vous à votre visite! Un Helper ou le propriétaire vous ouvre la porte: vous venez peut-être d'entrer dans votre futur appartement...</p>
-                                    <a href="javascript:void(0)" onclick="$.fn.fullpage.moveSlideRight();"><img src="images/next.png" alt="boutton next" /></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- end .slide -->
-
-            </div><!-- end #about -->
+                </div><!-- end #about -->
+                
+                
 
 
-            <div class="section section-default" data-anchor="team">
+
+     <div class="section section-default" data-anchor="team">
                 <div class="slide hidden-xs visible-sm-block visible-md-block visible-lg-block">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                 <div class="feature text-center">
-                                    <img class="pic" src="images/lolo.png" alt="laurence">
+                                    <img style="width:215px;" class="step img-circle" src="images/S4.png" alt="selectionnez">
                                     <dl class="text-center">
-                                        <dd>Laurence Benamran</dd>
-                                        <dd>CEO et Co-Fondatrice</dd>
+                                        <dd><strong>Sélectionnez</strong></dd>
+                                        <dd>Un appartement ou un profil te plaît, il te suffit d'un like pour le faire savoir.</dd>
                                     </dl>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                 <div class="feature text-center">
-                                    <img class="pic" src="images/sach.png" alt="sacha">
+                                    <img style="width:215px;" class="step img-circle" src="images/STEP-2.png" alt="matchez">
                                     <dl class="text-center">
-                                        <dd>Sacha Mourain</dd>
-                                        <dd>COO et Co-Fondateur</dd>
+                                        <dd><strong>Matchez</strong></dd>
+                                        <dd>Propriétaires, locataires, colocataires, vos profils sont complémentaires !</dd>
                                     </dl>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                 <div class="feature text-center">
-                                    <img src="images/mat.png" alt="matthieu" class="pic">
+                                    <img style="width:215px;" class="step img-circle" src="images/S3.png" alt="visitez" >
                                     <dl class="text-center">
-                                        <dd>Matthieu Babe</dd>
-                                        <dd>Chief Designer et Co-Fondateur</dd>
+                                        <dd><strong>Visitez</strong></dd>
+                                        <dd>Place à la discussion ! Recueillez plus d'informations et convenez d'une visite sur le tchat PINPO !</dd>
                                     </dl>
                               </div>
                             </div>
@@ -199,10 +176,10 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                               <div class="feature text-center">
-                                <img class="pic" src="images/lolo.png" alt="lolo">
-                                <dl class="text-center">
-                                  <dd>Laurence Benamran</dd>
-                                  <dd>CEO et Co-Fondatrice</dd>
+                                <img style="width:215px;" class="step img-circle" src="images/S4.png" alt="selectionnez">
+                                    <dl class="text-center">
+                                        <dd><strong>Sélectionnez</strong></dd>
+                                        <dd>Un appartement ou un profil te plaît, il te suffit d'un like pour le faire savoir.</dd>
                                 </dl>
                                 <a href="javascript:void(0)" onclick="$.fn.fullpage.moveSlideRight();"><img src="images/next.png" alt="next" /></a>
                               </div>
@@ -215,10 +192,10 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                               <div class="feature text-center">
-                                <img class="pic" src="images/sach.png" alt="sach">
-                                <dl class="text-center">
-                                  <dd>Sacha Mourain</dd>
-                                  <dd>COO et Co-Fondateur</dd>
+                                <img style="width:215px;" class="step img-circle" src="images/STEP-2.png" alt="matchez">
+                                    <dl class="text-center">
+                                        <dd><strong>Matchez</strong></dd>
+                                        <dd>Propriétaires, locataires, colocataires, vos profils sont complémentaires !</dd>
                                 </dl>
                                 <a href="javascript:void(0)" onclick="$.fn.fullpage.moveSlideRight();"><img src="images/next.png" alt="next" /></a>
                               </div>
@@ -231,10 +208,10 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                               <div class="feature text-center">
-                                <img src="images/mat.png" alt="mat" class="pic">
-                                <dl class="text-center">
-                                  <dd>Matthieu Babe</dd>
-                                  <dd>Chief Designer et Co-Fondateur</dd>
+                                <img style="width:215px;" class="step img-circle" src="images/S3.png" alt="visitez" >
+                                    <dl class="text-center">
+                                        <dd><strong>Visitez</strong></dd>
+                                        <dd>Place à la discussion ! Recueillez plus d'informations et convenez d'une visite sur le tchat PINPO !</dd>
                                 </dl>
                                 <a href="javascript:void(0)" onclick="$.fn.fullpage.moveSlideRight();"><img src="images/next.png" alt="next" /></a>
                               </div>
@@ -282,7 +259,7 @@
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-left">
                                     <p class="coming-soon">
                                         <a class="btn disabled" style="padding: 0px;" href="#"><img class="img-rounded" height="50" src="images/appstore.png"></a>
-                                        Bientôt téléchargeable
+                                        Bientôt disponible
                                     </p>
                                 </div>
                             </div>
@@ -339,8 +316,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-success">Send</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                        <button type="submit" class="btn btn-success">Envoyer</button>
                     </div>
                 </form>
             </div><!-- /.modal-dialog -->
