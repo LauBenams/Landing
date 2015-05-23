@@ -9,8 +9,8 @@ $(document).ready () ->
         scrollingSpeed: 1000
     }
 
-    $('#counter').countdown "2015/06/01", (event) ->
-        $(this).text event.strftime('%D Days, %H Hours, %M Minutes, %S Seconds')
+    $('#counter').countdown "2015/06/15", (event) ->
+        $(this).text event.strftime('%D Jours, %H Heures, %M Minutes, %S Secondes')
 
     # Activate 'next button' on about section
     $('.fp-section').on 'click touchstart', '.feature img', (event) ->
