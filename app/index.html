@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>PINPO | La Communauté Mobile de l'Immobilier</title>
-        <meta name="description" content="Trouvez le (co)locataire ou le logement de vos rêves en temps réel. Créez simplement des annonces immobilières et des profils de locataires de grande qualité. Diffusez votre dossier en 1 click !">
+        <meta name="description" content="Matchez avec  (co)locataire ou le logement de vos rêves. Créez simplement des annonces immobilières et des profils de locataires de grande qualité. Diffusez votre dossier en 1 click !">
         <meta name="keywords" content="Immobilier, annonce, locataire, propriétaire, recherche, matching, qualité, recommandation, certification, mobile, internet, rapidité, simplicité" />
         <meta name="robots" content="index, follow, all" />
         <meta name="viewport" content="width=device-width">
@@ -42,17 +42,18 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><img src="images/logo.png" class="img-responsive" alt="Logo" width="30" height="50"></a>
+                    <a class="navbar-brand" href="#"><img src="images/PINPO-06.png" class="img-responsive" alt="Logo" width="50" height="90"></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul id="nav-menu" class="nav navbar-nav">
                         <li data-menuanchor="home"><a href="#home">Accueil</a></li>
-                        <li data-menuanchor="about"><a href="#about">À propos</a></li>
+                        <li data-menuanchor="about1"><a href="#about1">Locataire</a></li>
+                        <li data-menuanchor="about2"><a href="#about2">Propriétaire</a></li>
                         <li data-menuanchor="team"><a href="#team">La solution</a></li>
                         <li data-menuanchor="contact"><a href="#contact">Contact</a></li>
-                        <li><a href="http://pinpo.fr/blog/">Blog</a></li>
+                        <li><a href="http://pinpo.fr/blog/" target=_blank>Blog</a></li>
                     </ul>
 
                     <!-- <div class="navbar-contact hidden-xs"> -->
@@ -73,7 +74,7 @@
                 <h5 style="color:#FFF; font-weight:100">LOCATION, SOUS-LOCATION, COLOCATION</h5>
                 <form class="form-inline" id="signup" method="POST" action="api/signup.php">
                                 <div class="form-group">
-                                    <input type="text" name="email" id="signup_email" class="form-control form-control-inverse validate[required,custom[email]] text-input input-text m-wrap m-ctrl" placeholder="Votre adresse mail" required/>
+                                    <input type="text" name="email" id="signup_email" class="form-control form-control-inverse validate[required,custom[email]] text-input input-text m-wrap m-ctrl" placeholder="Inscription Newsletter" required/>
                                 </div>
                                 <input type="hidden" name="ajax" value="1" />
                                 <button type="submit" name="submit" class="btn btn-success"><span>GO !</span></button>
@@ -87,50 +88,53 @@
             </div><!-- end #home -->
 
 
-            <div class="section section-default" data-anchor="about">
+            <div class="section section-default" data-anchor="about1">
 
-                <div class="slide">
+               <!-- <div class="slide">-->
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 center">
                                 <div class="feature feature-img text-center">
-                                    <img class="step img-responsive" src="images/feature_mockup_1.png" alt="step1"/>
+                                    <img class="img-responsive" src="images/feature_mockup_1.png" alt="step1"/>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 center">
                                 <div class="feature feature-description text-left">
-                                    <h2 class="titreslide"><span>Locataire, enfin quelqu'un qui vous comprend !</span></h2>
-                                    <h3>Finie la queue dans les escaliers</h3>
+                                    <h2 style="color:#4C4C4C;"><span>Locataire, enfin quelqu'un qui vous comprend !</span></h2>
+                                    <h3 style="font-weight:200;">Finie la queue dans les escaliers</h3>
 					  <p>Avec PINPO, ce n'est pas juste votre dossier financier qui compte, mais surtout qui vous êtes. Chez nous, c'est l’humain avant tout ! Pas de perte de temps, de visites inutiles, plus d'annonces incomplètes. Une visite signifie une réelle chance de louer le bien que vous aurez choisi.</p>
-                       <h4>Propriétaires ---&gt;</h4>
+                       <!--<h4>Propriétaires ---&gt;</h4>-->
 
-                                  <a href="javascript:void(0)" onclick="$.fn.fullpage.moveSlideRight();"><img src="images/next.png" alt="boutton nextnext" /></a>
+                                  <!--<a href="javascript:void(0)" onclick="$.fn.fullpage.moveSlideRight();"><img src="images/next.png" alt="boutton nextnext" /></a>-->
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div><!-- end .slide -->
+                <!--</div><!-- end .slide -->
+                </div>
+                
+                <div class="section section-default" data-anchor="about2">
 
-                <div class="slide">
+               <!-- <div class="slide">-->
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 center">
                                 <div class="feature feature-img text-center">
-                                    <img class="step img-responsive" src="images/feature_mockup_2.png" alt="step2"/>
+                                    <img class="img-responsive" src="images/feature_mockup_2.png" alt="step2"/>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 center">
                                 <div class="feature feature-description text-left">
-                                    <h2 class="titreslide"><span>Propriétaire, voilà la location en toute sérénité !</span></h2>
-                                   <h3>Les mauvaises surprises... plus jamais</h3>
-					  <p>Nous proposons une plateforme avec des profils de locataires de qualité. Finies les heures passées à recevoir des dizaines d'appels. Fini le choix de son locataire à l'aveugle, uniquement basé sur sa solvabilité . À vous de choisir réellement qui convient à votre bien.</p>
-                      <h4>&lt;--- Locataires</h4>
-                                    <a href="javascript:void(0)" onclick="$.fn.fullpage.moveSlideRight();"><img src="images/next.png" alt="boutton next" /></a>
+                                    <h2 style="color:#4C4C4C;"><span>Propriétaire, louez en toute sérénité !</span></h2>
+                                   <h3 style="font-weight:200;">Les mauvaises surprises... plus jamais</h3>
+					  <p>Nous proposons une plateforme avec des profils de locataires de qualité. Finies les heures passées à recevoir des dizaines d'appels.<br> Fini le choix de son locataire à l'aveugle, uniquement basé sur sa solvabilité . À vous de choisir réellement qui convient à votre bien.</p>
+                      <!--<h4>&lt;--- Locataires</h4>-->
+                                    <!--<a href="javascript:void(0)" onclick="$.fn.fullpage.moveSlideRight();"><img src="images/next.png" alt="boutton next" /></a>-->
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div><!-- end .slide -->
+               <!-- </div><!-- end .slide -->
                 </div><!-- end #about -->
 
 
@@ -227,7 +231,7 @@
 
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <h2 class="about">Temps restant avant le lancement de l'application:</h2>
+                            <h2 class="about">Abonnez-vous à notre Newsletter</h2>
                             <div id="counter"><!--counter is here --></div>
 
                             <form class="form-inline" id="signup" method="POST" action="api/signup.php">
